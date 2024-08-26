@@ -103,24 +103,26 @@ With respect to data modeling, the other choice is to map a user with the entire
 ![HLD](home-timeline.drawio.svg)
 
 ## Comments
-Comments have the natural structure of a tree with the root being a post
-So comments can be stored in a graph datastore?
-But can all comments for a post be stored as a json document in a document store
-{
+* Comments have the natural structure of a tree with the root being a post
+* So comments can be stored in a graph datastore?
+* But can all comments for a post be stored as a json document in a document store
+
+* `{
 Post : “post-id”,
 Comments : [ { comment : “first-comment”, replies : []}, {“2nd-comment”}
-}
-Posts with lots of comments will result in a big document
+}`
+* Posts with lots of comments will result in a big document
+* TODO
 
 
 ## Search
-
+* TODO
 
 
 
 ## References
-https://www.infoq.com/presentations/Twitter-Timeline-Scalability/
-https://www.youtube.com/watch?v=S2y9_XYOZsg&t=946s
+* https://www.infoq.com/presentations/Twitter-Timeline-Scalability/
+* https://www.youtube.com/watch?v=S2y9_XYOZsg&t=946s
 
 
 ## Todo
