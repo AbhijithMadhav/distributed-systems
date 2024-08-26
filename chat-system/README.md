@@ -26,7 +26,7 @@ A ‘Chat system’ is something like Whatsapp which enables users to communicat
     * Opening of a connection(which is costly) for every message
     * Server needs to initiate a connection when sending a message to the recipient. HTTP is typically used by a client to initiate a single request-response style communication with the client
   * Web sockets allow for bidirectional communication between client and server once a connection has been established
-  * Another alternative is client-polling which is again not efficient
+  * Another alternative is client-polling, which is again not efficient
 * The chat messages will be stored in a database so that they can be delivered later to an offline client. The storage of chat is limited to that last 30 days off messages. This ensures a limit to the unbounded growth of storage
 * Support for chat history will be the responsibility of the client itself. This can be done by using local storage on the client(like SQLite on mobile clients)
 * Sync across various clients
