@@ -80,9 +80,9 @@ Considering relational store if observability capability needs to be built(no. O
 ![rate-limiter](rate-limiter.svg)
 
 ## Real world implementations
-* Kong : As a plugin in its API gateway product
-* Google cloud armor
-* HAProxy, https://www.haproxy.com/documentation/haproxy-configuration-tutorials/traffic-policing/
+* [Kong](https://docs.konghq.com/gateway/latest/get-started/rate-limiting/) : As a plugin in its API gateway product
+* [Google cloud armor](https://cloud.google.com/armor/docs/rate-limiting-overview)
+* [HAProxy](https://www.haproxy.com/blog/four-examples-of-haproxy-rate-limiting), https://www.haproxy.com/documentation/haproxy-configuration-tutorials/traffic-policing/
 
 ## References
 * https://www.youtube.com/watch?v=VzW41m4USGs
