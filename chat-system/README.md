@@ -112,6 +112,9 @@ A ‘Chat messaging system’ is something like Whatsapp which enables users to 
 * => 100 million UDP requests per second
 
 ## Detailed design
+
+![chat system](chat-system-4.drawio.svg)
+
 ### Chat service
 #### Workload considerations
 * Read workload will be light as most read requests are going to be satisfied by the client using local storage once message delivery is done. Only read requests are going to be by out-of sync clients.
@@ -213,8 +216,6 @@ Some observations
 * Multiple app instances can be deployed to ensure resilience. This is the basic expectation done via some orchestration platform
 * This will imply usage of reverse proxy cum load balancer
 * Database leader based replication(for resilience)
-
-![chat system](chat-system-4.drawio.svg)
 
 ## References
 * https://bytebytego.com/courses/system-design-interview/design-a-chat-system
