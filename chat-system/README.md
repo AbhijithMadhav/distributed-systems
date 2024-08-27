@@ -20,6 +20,9 @@ A ‘Chat system’ is something like Whatsapp which enables users to communicat
 
 ## High level design
 ### Crux : Chat service
+
+![chat service](chat-service-1.svg)
+
 * Use a web-service(chat service) between two clients(sender and receiver) which will route the messages
 * Use websockets for communication between client and chat service
   * Use of HTTP has two disadvantages
@@ -30,12 +33,15 @@ A ‘Chat system’ is something like Whatsapp which enables users to communicat
 * The chat messages will be stored in a database so that they can be delivered later to an offline client. The storage of chat is limited to that last 30 days off messages. This ensures a limit to the unbounded growth of storage
 * Support for chat history will be the responsibility of the client itself. This can be done by using local storage on the client(like SQLite on mobile clients)
 * Sync across various clients
-  * Maintaining message offset(or timestamp) for each client
+  * Maintaining message offset(or timestamp) for each client along with the text messages
   * When a client connects to the chat service all messages after that point are pushed along the websocket connection
 
-![chat service](chat-service-1.svg)
+
 
 ### Supporting services
+
+![chat service](chat-service-2.svg)
+
 #### Authentication and Authorization service
 * This can be a third party service like Okta
 * Client connects to this to authenticate and to get requisite authorizations before presenting the same for connection with a chat server
@@ -57,8 +63,6 @@ A ‘Chat system’ is something like Whatsapp which enables users to communicat
 * This can be done using UDP which is lightweight than HTTP which is based over TCP
   * No connection establishment and teardown
   * The delivery is not guaranteed which is fine as a lost message will be compensated by the next keep-alive message
-
-![chat service](chat-service-2.svg)
 
 ## Operational Scale
 ### Storage
@@ -226,6 +230,8 @@ Some observations
 * https://www.cloudflare.com/en-in/learning/performance/types-of-load-balancing-algorithms/
 
 ## To do
+* Code something using websockets
+* Code something using a authn/authz system like okta
 * Impact of large group size?
 * API design
 * Understand zookeeper and how to implement consistent hashing using zookeeper. Actually why is this needed?
