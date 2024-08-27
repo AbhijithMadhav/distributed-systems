@@ -1,6 +1,6 @@
-# Chat System
+# Chat messaging system
 
-A ‘Chat system’ is something like Whatsapp which enables users to communicate. The communication can be via text messages, photos, videos, audio calls or video calls. Focus here is on communication via text messages
+A ‘Chat messaging system’ is something like Whatsapp which enables users to communicate. The communication can be via text messages, photos, videos, audio calls or video calls. Focus here is on communication via text messages
 
 ## Requirements
 ### Functional
@@ -19,9 +19,9 @@ A ‘Chat system’ is something like Whatsapp which enables users to communicat
 
 
 ## High level design
-### Crux : Chat service
-
 ![chat service](chat-service-1.svg)
+
+### Crux : Chat service
 
 * Use a web-service(chat service) between two clients(sender and receiver) which will route the messages
 * Use websockets for communication between client and chat service
@@ -136,7 +136,7 @@ A ‘Chat system’ is something like Whatsapp which enables users to communicat
 * Using timestamp as a clustering key helps in automatic dropping of this partition
 * This avoids manual deletes by inserting tombstones which can be costly for the cluster
 * Writes are fast. In a particular chat, a new chat message for a month results in insertion of a column with timestamp as the column name and the chat message as the value which is fast
-* But restoration of chats for a month can happen by reading a single partition/row which is also very fast. The row itself is not too big as it contains chat messages for a month of a particular chat. Cassandra limits the number of columns in a row to two billion. Surely no particular chat will need to have more than 2 billion messages a month. TODO
+* But restoration of chats for a month can happen by reading a single partition/row which is also very fast. The row itself is not too big as it contains chat messages for a month of a particular chat. Cassandra limits the number of columns in a row to two billion. This is more than sufficient
 
 #### Client offset table
 |                          |                               |
