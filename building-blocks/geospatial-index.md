@@ -42,4 +42,13 @@ Given a coordinate, the grid it is mapped to can be determined by binary search 
 ### Retrieval 
 A retrieval is typically to answer the use case of 'what are the other coordinates within x meters of the given location'
 1. Determine the grid for the given location
-2. If 'x meters' within protrudes to neighboring grids, get all the locations in those grids along with this one
+2. If 'x meters' within protrudes to neighboring grids, get all the locations in those grids along with this one\
+
+## Scaling
+Geospatial data can be huge, is typically sparse and heavily un-uniform.
+The size of the data can be handled by partitioning strategies. 
+
+Consider the distribution of data. 
+Heavily populated areas will be dense sources of data.
+So partitioning can't be uniform by grids. 
+Some grids will need their own nodes, whereas multiple sparsely populated grids can be assigned to a single node
